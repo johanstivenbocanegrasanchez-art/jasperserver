@@ -1,0 +1,22 @@
+# Ignorar binarios y librerias de Tomcat
+bin/*.jar
+lib/
+temp/
+work/
+logs/
+
+# Ignorar el WAR completo (muy pesado)
+webapps/jasperserver/WEB-INF/lib/
+webapps/jasperserver/WEB-INF/classes/
+webapps/ROOT/
+webapps/manager/
+webapps/host-manager/
+webapps/examples/
+webapps/docs/
+
+# Ignorar archivos del sistema
+*.class
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
