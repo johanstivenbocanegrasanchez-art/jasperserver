@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Context path="/jasperserver" reloadable="false">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/jasperserver" reloadable="false" docBase="C:/Users/JohanS.BocanegraS/jasperserver">
             
     <!-- maxActive: Maximum number of dB connections in pool. Make sure you
          configure your mysqld max_connections large enough to handle
@@ -56,7 +56,7 @@
 
     <Resource name="jdbc/libkoha" auth="Container" type="javax.sql.DataSource"
         maxActive="100" maxIdle="30" maxWait="10000"
-        username="sisinfo" password="Sif0s14$%2945At"
+        username="sisinfo" password="Ugc2023$%Bd"
         driverClassName="com.mysql.cj.jdbc.Driver"
         accessToUnderlyingConnectionAllowed = "true"
         validationQuery="SELECT 1"
