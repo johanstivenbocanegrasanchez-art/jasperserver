@@ -1,0 +1,242 @@
+/* -------------------------------------------------------------------------------
+    ABOUT CUSTOM OVERRIDES
+
+    .overrides_custom css
+
+    Place styles for simple UI customization in this file.
+
+    This file is loaded after all other CSS, so selectors here will override
+    rules in all other Jaspersoft css files.
+
+    Using this file to customize your theme is the method most likely to
+    preserve your customizations even if markup changes in future releases.
+
+    Extensive customizations may be easier to implement by replacing one or
+    more of the standard theme files in your custom theme folder.
+
+    Future product releases may introduce new components. Styles for any new
+    components will be in css files that you have overridden or replaced. Your
+    theme will not have these new styles, so the new components may not display
+    as desired until you add your own customizations for these components.
+
+    All keyboard focus styles have been added to the section "ACCESSIBILITY
+    FOCUS STYLES" below. If you wish to change these styles, simply uncomment
+    and change the values to suit your needs.
+   --------------------------------------------------------------------------------  */
+
+/* GENERAL THEME */
+
+
+
+
+
+
+/* ---------------------------- */
+/*  ACCESSIBILITY FOCUS STYLES  */
+/* ---------------------------- */
+/*   1. Global Elements         */
+/* ---------------------------- */
+.menu.primaryNav .leaf.focus-visible .wrap,
+.menu.primaryNav .node.focus-visible .wrap,
+#metaLinks li.focus-visible:not(select) {
+ /* O-5 ACTIVADO */
+    background-color: #0078bd;
+}
+
+#globalSearch.control.searchLockup > .wrap > input[type=text]:focus,
+#globalSearch .button.search.focus-visible,
+#globalSearch .button.searchClear.focus-visible {
+ /* Uncomment and change values to customize
+    border: 1px solid #0098f0 !important;
+    outline: 2px solid #0098f0 !important; */
+}
+
+#frameFooter #about a.focus-visible {
+ /* Uncomment and change values to customize
+    box-shadow:  0 -2px #bde7ff, 0 2px #0078bd; */
+}
+
+/* ---------------- */
+/*   2. Buttons     */
+/* ---------------- */
+.action:focus-visible {
+ /* Uncomment and change values to customize
+    outline: 2px solid #666666; */
+}
+
+.action.primary:focus-visible,
+.action.simple.focus-visible,
+.toolbar > .list.buttonSet .leaf .focus-visible,
+.button.search.focus-visible,
+.button.searchClear.focus-visible {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79; */
+}
+
+/* ----------------------------- */
+/*   3. Controls and Inputs      */
+/* ----------------------------- */
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+.control.combo > select.button:focus {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79 !important; */
+}
+
+input[type="text"][readonly]:focus,
+input[type="password"][readonly]:focus,
+textarea[readonly]:focus {
+ /* Uncomment and change values to customize
+    outline-style: dotted !important; */
+}
+
+.control.switch .focus-visible + .wrap .track,
+select.focus-visible,
+input[type=checkbox].focus-visible,
+input[type=radio].focus-visible,
+#sortMode > .tab.selected:focus-visible:after,
+#viewMode > .tab.selected.focus-visible:after {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79; */
+}
+
+/* ---------------- */
+/*   4. Menu        */
+/* ---------------- */
+.menu.vertical li > .wrap.over.focus-visible {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79; */
+}
+
+/* ----------------------- */
+/*   6. Text Elements      */
+/* ----------------------- */
+/* link */
+a:focus-visible:not(.button) {
+ /* Uncomment and change values to customize
+    background-color: #bde7ff;
+    box-shadow: 0 -2px #bde7ff, 0 2px #062e79;
+    color: #062e79 !important;
+    text-decoration: none; */
+}
+
+/* non-link text that requires focus */
+.message.focus-visible {
+ /* Uncomment and change values to customize
+    background-color: #bde7ff;
+    color: #212121;
+    outline: 2px solid #062e79; */
+}
+
+/* ------------------------------- */
+/*   7. Page & Dialog Specific     */
+/* ------------------------------- */
+/* Home Page */
+.resourceBlock .buttonIconToggle:focus-visible,
+.resourceBlock .buttonIconToggle.focus-visible,
+.workflow-iconContainer .button.focus-visible {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79; */
+}
+
+.workflowsBlock .focus-visible .workflow {
+ /* Uncomment and change values to customize
+    outline: 3px solid #062e79; */
+}
+
+/* Permissions Dialog */
+.dialog.permissions .list.tabular .selected.subfocus > .wrap,
+.dialog.permissions .list.tabular .focus-visible.subfocus:not(select) {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79; */
+}
+
+.message.focus-visible {
+ /* Uncomment and change values to customize
+    background-color: #bde7ff;
+    color: #212121;
+    outline: 2px solid #062e79; */
+}
+
+
+/* ---------------------------------------------- */
+/*   8. Library, Search, and Repository Pages     */
+/* ---------------------------------------------- */
+/* resource table rows and cells */
+.list.tabular.resources .leaf.focus-visible > .wrap,
+.list.tabular.resources .node.focus-visible > .wrap,
+.list.tabular.resources .focus-visible.subfocus:not(li),
+.list.tabular.resources .scheduled.selected > .wrap .scheduled.icon.focus-visible {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79; */
+}
+
+/* Filter and Folder panel elements */
+#repoBrowse .button.minimize.focus-visible,
+#repoSearch .button.minimize.focus-visible,
+#repoSearch .list.filters li.selected.subfocus.focus-visible > .wrap,
+#filtersPanel .buttonIconToggle.focus-visible,
+.folders .list > li.selected.focus-visible > .wrap,
+.folders.selected.focus-visible > .wrap {
+ /* Uncomment and change values to customize
+    outline: 2px solid #062e79; */
+}
+/* O-5C POC START */
+:root {
+    --o5c-surface: #ffffff;
+    --o5c-border: #d3dae2;
+    --o5c-hover: #f4f7fb;
+    --o5c-focus: 3px solid rgba(11,76,134,0.72);
+    --o5c-text: #1f2933;
+}
+.action, .button, input[type="text"], input[type="password"], textarea, select, .control.combo > select.button {
+    border-radius: 8px;
+    transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.action > .wrap {
+    min-height: 34px;
+    padding: 0 14px;
+}
+input[type="text"], input[type="password"], textarea, .control.combo > select.button {
+    border: 1px solid var(--o5c-border);
+    background-color: var(--o5c-surface);
+    color: var(--o5c-text);
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
+input[type="text"]:hover, input[type="password"]:hover, textarea:hover, select:hover, .action:hover, .button:hover {
+    background-color: var(--o5c-hover);
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus, .control.combo > select.button:focus {
+    outline: none;
+    border-color: #0b4c86;
+    box-shadow: 0 0 0 3px rgba(11,76,134,0.16);
+}
+.action:focus-visible, .button:focus-visible, input[type="text"]:focus-visible, input[type="password"]:focus-visible, textarea:focus-visible, select:focus-visible, .control.combo > select.button:focus-visible {
+    outline: var(--o5c-focus);
+    outline-offset: 2px;
+}
+/* O-5C POC END */
+/* O-5D START */
+:root { --o5d-surface:#ffffff; --o5d-surface-strong:#f5f8fb; --o5d-border:rgba(211,218,226,.9); --o5d-shadow:0 16px 40px rgba(15,23,42,.05); --o5d-primary:#0b4c86; --o5d-hover:rgba(11,76,134,.08); --o5d-focus:3px solid rgba(11,76,134,.4); --o5d-text:#1f2933; }
+.menu.primaryNav .leaf { margin-right:.4rem; }
+.menu.primaryNav .wrap { min-height:42px; line-height:42px; padding:0 1rem; border-radius:10px; transition:background-color .2s ease, color .2s ease; }
+.menu.primaryNav .leaf.over > .wrap, .menu.primaryNav .leaf.selected > .wrap, .menu.primaryNav .leaf .wrap.focus-visible { background:rgba(11,76,134,.12); color:var(--o5d-primary); }
+#metaLinks li { margin-right:1rem; }
+.menu.vertical { background:var(--o5d-surface-strong); border:1px solid var(--o5d-border); box-shadow:var(--o5d-shadow); border-radius:14px; }
+.menu.vertical .wrap { padding:10px 16px; }
+.resourceBlock, .dialog, .list.tabular.resources .leaf > .wrap, .list .leaf.selected > .wrap { background:var(--o5d-surface); border:1px solid var(--o5d-border); border-radius:14px; box-shadow:var(--o5d-shadow); }
+.list .leaf > .wrap { padding:12px 14px; margin-bottom:.35rem; }
+.list .leaf.selected > .wrap, .list .leaf.pressed > .wrap, .list .leaf.over > .wrap { background:var(--o5d-hover); }
+.action, .button { border-radius:10px; min-height:38px; padding:0 16px; transition:background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.action.primary, .button.up.primary { background:var(--o5d-primary); color:#ffffff; border:none; }
+.action.simple, .button.simple { background:#ffffff; border:1px solid var(--o5d-border); color:var(--o5d-text); }
+.button.up.primary.over, .action.primary.over, .button.up.primary.pressed, .action.primary.pressed { background:rgba(8,62,106,.95); }
+input[type="text"], input[type="password"], textarea, select, .control.combo > select.button { border:1px solid var(--o5d-border); border-radius:10px; padding:10px 12px; background:var(--o5d-surface); color:var(--o5d-text); transition:border-color .2s ease, box-shadow .2s ease; }
+label, .label { color:var(--o5d-text); margin-bottom:.5rem; }
+input:focus, textarea:focus, select:focus, .control.combo > select.button:focus { outline:none; border-color:var(--o5d-primary); box-shadow:0 0 0 3px rgba(11,76,134,.16); background:#ffffff; }
+.action:focus-visible, .button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, .control.combo > select.button:focus-visible { outline:var(--o5d-focus); outline-offset:2px; }
+.resourceBlock .buttonIconToggle, .workflow-iconContainer .button { border-radius:12px; }
+.message.focus-visible, .list .leaf.focus-visible > .wrap { background:rgba(11,76,134,.12); }
+/* O-5D END */
