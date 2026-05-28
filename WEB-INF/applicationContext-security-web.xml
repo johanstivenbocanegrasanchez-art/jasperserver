@@ -699,7 +699,8 @@
             <util:map value-type="java.util.List">
                 <entry key="Set-Cookie">
                     <util:list id="cookie-list">
-                        <value>SameSite=None</value>
+                        <!-- SECURITY C-1A SEC-01 2026-05-28: SameSite=None replaced with Lax (HTTP-only deployment) -->
+                        <value>SameSite=Lax</value>
                         <value>Secure</value>
                     </util:list>
                 </entry>
