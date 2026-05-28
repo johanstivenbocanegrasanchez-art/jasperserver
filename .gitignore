@@ -1,0 +1,6 @@
+# Archivos temporales de pruebas curl y auditoria
+*.tmp
+session_*.txt
+auth_*.txt
+cookie_audit.txt
+headers_*.txt
