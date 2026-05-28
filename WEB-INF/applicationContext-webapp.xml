@@ -860,6 +860,26 @@ http://www.springframework.org/schema/util http://www.springframework.org/schema
                         </list>
                     </property>
                 </bean>
+                <!-- SEC-CACHE-01: no-store en paginas dinamicas autenticadas (anti back-button post-logout) -->
+                <bean p:method="GET" p:urlPattern="/(home|flow|loginsuccess|reportGenerator|dashboard/viewer|scheduler/.+|exituser|logout)\.html.*"
+                      class="com.jaspersoft.jasperserver.war.httpheaders.HeadersRule">
+                    <property name="headers">
+                        <list>
+                            <bean class="org.apache.http.message.BasicHeader">
+                                <constructor-arg value="Cache-Control"/>
+                                <constructor-arg value="no-cache, no-store, must-revalidate"/>
+                            </bean>
+                            <bean class="org.apache.http.message.BasicHeader">
+                                <constructor-arg value="Pragma"/>
+                                <constructor-arg value="no-cache"/>
+                            </bean>
+                            <bean class="org.apache.http.message.BasicHeader">
+                                <constructor-arg value="Expires"/>
+                                <constructor-arg value="0"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
                 <bean p:method="GET" p:urlPattern="/.*?\.([hH][tT][mM]|[jJ][sS]|[cC][sS][sS]|[pP][nN][gG]|[gG][iI][fF])$"
                       class="com.jaspersoft.jasperserver.war.httpheaders.HeadersRule">
                     <property name="headers">

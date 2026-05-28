@@ -655,6 +655,10 @@
     <session-config>
         <!-- Default to 20 minute session timeouts -->
         <session-timeout>20</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
     </session-config>
 
     <jsp-config>
@@ -776,27 +780,25 @@
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>   -->
         </user-data-constraint>
     </security-constraint>
-    <!--
-        This constraint disables the listed HTTP methods, which are not used by JS
-        <security-constraint>
-            <web-resource-collection>
-                <web-resource-name>Forbidden</web-resource-name>
-                <url-pattern>/*</url-pattern>
-                <http-method>HEAD</http-method>
-                <http-method>CONNECT</http-method>
-                <http-method>COPY</http-method>
-                <http-method>LOCK</http-method>
-                <http-method>MKCOL</http-method>
-                <http-method>OPTIONS</http-method>
-                <http-method>PATCH</http-method>
-                <http-method>PROPFIND</http-method>
-                <http-method>PROPPATCH</http-method>
-                <http-method>SEARCH</http-method>
-                <http-method>TRACE</http-method>
-                <http-method>UNLOCK</http-method>
-            </web-resource-collection>
-        </security-constraint>
-    -->
+    <!-- SECURITY C-1A SEC-09 2026-05-28: Block unused HTTP methods — prevents XST via TRACE and other attack vectors -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Forbidden</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>HEAD</http-method>
+            <http-method>CONNECT</http-method>
+            <http-method>COPY</http-method>
+            <http-method>LOCK</http-method>
+            <http-method>MKCOL</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>PATCH</http-method>
+            <http-method>PROPFIND</http-method>
+            <http-method>PROPPATCH</http-method>
+            <http-method>SEARCH</http-method>
+            <http-method>TRACE</http-method>
+            <http-method>UNLOCK</http-method>
+        </web-resource-collection>
+    </security-constraint>
 
     <error-page>
         <error-code>404</error-code>

@@ -385,7 +385,7 @@
             Chrome browser does not support ALLOW-FROM.  IE does not support Content-Security-Policy.
             Setting both headers protects all the browsers against click-jacking.
         -->
-        <property name="antiClickJackingEnabled" value="false"/>
+        <property name="antiClickJackingEnabled" value="true"/>
         <property name="antiClickJackingOption" value="SAMEORIGIN"/>
 
         <!--
@@ -401,7 +401,7 @@
             every response? If already present, the header will be replaced. If not specified, the
             default value of true will be used.
         -->
-        <property name="blockContentTypeSniffingEnabled" value="false"/>
+        <property name="blockContentTypeSniffingEnabled" value="true"/>
 
         <!--
             Should the header that enables the browser's cross-site scripting filter protection
@@ -699,7 +699,8 @@
             <util:map value-type="java.util.List">
                 <entry key="Set-Cookie">
                     <util:list id="cookie-list">
-                        <value>SameSite=None</value>
+                        <!-- SECURITY C-1A SEC-01 2026-05-28: SameSite=None replaced with Lax (HTTP-only deployment) -->
+                        <value>SameSite=Lax</value>
                         <value>Secure</value>
                     </util:list>
                 </entry>

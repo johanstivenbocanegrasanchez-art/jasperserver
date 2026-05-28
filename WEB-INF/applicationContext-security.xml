@@ -63,7 +63,7 @@
                 <property name="key"><value>foobar</value></property>
             </bean>
         --> <bean id="loginLockoutConfig" class="com.jaspersoft.jasperserver.api.common.configuration.LoginLockoutConfig">
-        <property name="allowedNumberOfLoginAttempts" value="10"></property>
+        <property name="allowedNumberOfLoginAttempts" value="5"></property>
     </bean>
 
         <bean id="logEventService" class="com.jaspersoft.jasperserver.api.metadata.common.service.impl.LogEventServiceImpl">
