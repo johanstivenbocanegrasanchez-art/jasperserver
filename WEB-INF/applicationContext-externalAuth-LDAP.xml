@@ -87,6 +87,9 @@
         <property name="externalDataSynchronizer" ref="externalDataSynchronizer"/>
     </bean>
 
+    <!-- BUGFIX 2026-05-28: eraseCredentialsAfterAuthentication=false prevents NPE in daoAuthenticationProvider
+         when LDAP authenticates first and Spring erases credentials from the token before the fallback provider runs.
+         PasswordCipherer.matches() calls Objects.requireNonNull() which fails on null credentials. -->
     <bean id="ldapAuthenticationManager" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSProviderManager">
         <constructor-arg index="0">
             <list>
@@ -96,6 +99,7 @@
                 <ref bean="anonymousAuthenticationProvider"/>-->
             </list>
         </constructor-arg>
+        <property name="eraseCredentialsAfterAuthentication" value="false"/>
     </bean>
 
     <bean id="ldapAuthenticationProvider" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.ldap.JSLdapAuthenticationProvider">
